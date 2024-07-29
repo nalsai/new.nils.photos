@@ -1,0 +1,7 @@
+baseURL = 'https://new.nils.photos/'
+languageCode = 'en-us'
+title = 'new.nils.photos'
+
+[module]
+[[module.imports]]
+path = "github.com/nicokaiser/hugo-theme-gallery/v4"
