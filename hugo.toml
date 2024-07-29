@@ -1,6 +1,7 @@
 baseURL = 'https://new.nils.photos/'
 languageCode = 'en-us'
 title = 'new.nils.photos'
+timeout = '240s'
 
 [module]
 [[module.imports]]
