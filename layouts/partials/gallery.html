@@ -25,8 +25,8 @@
       {{ end }}
       {{ range sort $images (.Params.sort_by | default "Name") (.Params.sort_order | default "asc") }}
         {{ $image := .image }}
-        {{ $thumbnail := $image.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
-        {{ $full := $image.Filter (slice images.AutoOrient (images.Process "fit 2560x2560")) }}
+        {{ $thumbnail := $image.Filter (slice images.AutoOrient (images.Process "fit 600x600 webp")) }}
+        {{ $full := $image.Filter (slice images.AutoOrient (images.Process "fit 3840x3840 webp")) }}
         {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
         <a class="gallery-item" href="{{ $image.RelPermalink }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" title="{{ .Title }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
           <figure style="background-color: {{ $color }}; aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
